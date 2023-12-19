@@ -27,8 +27,10 @@ First, you'll need to gather images of Ferraris and Lamborghinis. You can downlo
 2. If you're satisfied with the results, click on 'Export Model'. Choose 'Tensorflow.js' > 'Upload my model' > 'Copy' to get a link to your model.
 
 **Questions:**
-1. How does the number and diversity of images in your dataset affect the accuracy of your model?
-2. What are some limitations of the model you built using Teachable Machine?
+Link to the model : https://teachablemachine.withgoogle.com/models/bjEuuuD8S/
+
+- **How does the number and diversity of images in your dataset affect the accuracy of your model? :** I used around 105 images of Lamborghinis and 125 images of Ferraris in different shades, models, colors, and scenarios. It showed 100% accuracy on the images in which it was trained on but was not really able to differentiate when showed Lamborghini and Ferrari in one picture. Majority of the images of Lamborghini were from back side or back right side and it was able to identify those more accurately compared to front images of it so turns out the model the number of images and diversity of the images play a big role in accuracy of a model.
+- **What are some limitations of the model you built using Teachable Machine?:**  At first, I downloaded images in bulk from Instagram accounts of Lamborghinis and Ferraris which was 1000 to 1500 images uploaded it in bulk and when starting training it became responsive turns out teachable machine doesn’t support large volume datasets which leads to poor training of the model as the dataset isn’t diverse.
 
 **External Reading:**
 1. [Teachable Machine FAQ](https://teachablemachine.withgoogle.com/faq)
