@@ -74,4 +74,8 @@ print('Test accuracy:', test_acc)
 ```
 *Task*: Now, try building your own model. Try adding more layers, changing the number of units in the layers, or changing the activation function. See how these changes affect the accuracy of the model.
 ---
-Remember, this is just an introduction. There are many more things you can do with image processing and Keras. Don't hesitate to experiment and try new things!
+I tried adding addtional input layers of relu activation function, first of 256 neurons and then 128 neurons turns out adding additional layer of 256 neurons increased accuracy but adding one extra layer of 128 reduced accuracy and increased loss. 
+
+Increasing units in the first layer improved accuracy slightly (0.9809 vs 0.9793) while maintaining similar loss (0.0587 vs 0.0690). This suggests the extra capacity helped learn richer representations.
+
+Used other types of activation functions such as tanh, sigmoid, and linear. All of these activation function performed badly compared to relu. Linear and sigmoid perfomed very badly by increased loss and decreased accuracy.
