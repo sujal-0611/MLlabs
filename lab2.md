@@ -13,9 +13,11 @@ Convolutional Neural Networks (CNNs) are a type of deep learning model that are 
 Before we dive in, read this [simple guide on CNNs](https://brohrer.github.io/how_convolutional_neural_networks_work.html) for an overview and answer the following questions:
 
 1. What is the main difference between a regular fully connected layer and a convolutional layer in a neural network?
+Convolutional layers work by using convolution math, we give it a image it goes to smallest units of the image which is pixels, picksup 2*2 pixels or 3 as we want and compares the pixels to each other and filters the pixels creating a feature map on the other hand fully connected layers are used to elect the prediction values of input values using voting weights(features map)
 2. What is a feature map?
+Feature map is the set of two dimensional arrays generated through convolution math and filtering using pixel values.
 3. What are pooling layers and why are they useful in CNNs?
-
+Pooling is used to extract most prominient features from features map i think it helps in shrinking the size of the model while maintaining the important features which help in cases in which objects are little tweaked.
 ## Part 2: Building a CNN with Keras
 
 Now, let's put what you've learned into practice by building a CNN to classify images from the CIFAR-10 dataset.
