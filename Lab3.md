@@ -13,6 +13,7 @@ A language model is a type of artificial intelligence model that provides a prob
 There are various types of language models, from simple ones like Unigram and Bigram models, to more complex ones like RNN-based and Transformer-based models.
 
 **Exercise 1.1**: Can you think of an example where language models might be used in a real-world application?
+It can be used in chatbots, customer care services and language translation
 
 ## Part 2: Understanding Recurrent Neural Networks (RNNs)
 
@@ -21,6 +22,7 @@ There are various types of language models, from simple ones like Unigram and Bi
 Recurrent Neural Networks (RNNs) are a type of neural network architecture that are well-suited to sequence prediction problems like language modeling because they can remember previous inputs in memory. This is especially useful in language modeling where the context (previous words) often informs the next word.
 
 **Exercise 2.1**: Can you think of another task, apart from language modeling, where RNNs might be useful?
+I think it can be used in time-series data predictions such as stock prices, revenue forecasting, weather forecasting.
 
 Here's a useful [resource](http://colah.github.io/posts/2015-08-Understanding-LSTMs/) to learn more about RNNs and how they work.
 
@@ -38,7 +40,15 @@ import numpy as np
 ```
 
 **Exercise 3.1**: What are each of these libraries and functions used for? 
+Tensorflow is used for machine learning tasks, keras is a api for tensorflow, sequential from keras.models is a class for feedforward task in RNNs. 
 
+Layers in keras such as embedding, LSTM, and Dense, embedding layer converts integer encoded text into vector representations capturing semantic relationships, LSTM is a type of RNN layer designed to capture long range dependencies in sequences, Dense is a fully connected layer used for prediction and output.
+
+Keras.losses is a module which has loss many loss functions, loss functions calculate the error between the predicted values and actual values. SparseCategoricalCrossentropy is specifically designed for multi-class classification problems where labels are integer-encoded, such as in language modeling.
+
+keras.optimzers is a module with algorithms for optimizing the weights of the model to minimze the loss. We are using ADAM (Adaptive Moment Estimation optimizer), It is an optimization algorithm commonly used in deep learning. It is an extension of the stochastic gradient descent (SGD) algorithm and is designed to update the weights of a neural network during training.
+
+Then, we are using numpy, a library in python to play with numbers and array manipulation.
 ## Part 4: Preparing the Dataset
 
 We'll be using a text dataset for our language model. You can use any text data you like, but for this lab, let's use 'The Complete Works of William Shakespeare'.
@@ -65,14 +75,14 @@ sequences = char_dataset.batch(seq_length+1, drop_remainder=True)
 ```
 
 **Exercise 4.1**: What is the purpose of the `char2idx` and `idx2char` dictionaries?
-
+ I think char2idx creates a dictionary of integer indices, idx2char is creating a numpy array which indices chars of the text. char2idx dictionary enables converting sequences of characters into sequences of integer indices, which can be fed into the model and idx2char array allows for converting predicted sequences of indices back into readable text during the model's output phase.
 **Exercise 4.2**: Why do we divide the data into input and target?
+
+We are dividing data into input and target because we need the model to learn the differences between predicted values and target values
 
 ## Part 5: Building the Model
 
-Now, let's build our R
-
-NN model. We'll use an embedding layer, a LSTM layer, and a dense layer.
+Now, let's build our RNN model. We'll use an embedding layer, a LSTM layer, and a dense layer.
 
 ```python
 # Length of the vocabulary in chars
