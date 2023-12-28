@@ -18,6 +18,8 @@ model = AutoModelForCausalLM.from_pretrained("microsoft/DialoGPT-medium")
 
 **Exercise 1.1**: What are some other models available in the Hugging Face model hub?
 
+Hugging face has many models for various tasks models i have used are GPT2 Medium,  Hinglish-bert, bart-large-news, xsum, and dialogpt.
+
 ## Part 2: Introduction to Gradio
 
 Gradio allows us to quickly create customizable UI components around our models.
@@ -27,13 +29,13 @@ Gradio allows us to quickly create customizable UI components around our models.
 ```
 
 **Exercise 2.1**: Can you think of a use case for Gradio other than showcasing NLP models?
-
+I think it can be used in image/audio models as well.
 ## Part 3: Introduction to Tokenization
 
 Tokenization is the process of splitting text into individual 'tokens' or words.
 
 **Exercise 3.1**: What are some challenges you might encounter when tokenizing text?
-
+I think special characters, punctuation, and out of vocabulary words are some challenges we encounter when tokenizing text.
 ## Part 4: Fine-Tuning a Model
 
 Fine-tuning involves slightly modifying the weights of a pre-trained model to make it perform better on a specific task. Let's fine-tune our DialoGPT model on a custom dataset. This can be any text data, but for simplicity, let's use a single repeated prompt-response pair:
@@ -80,7 +82,7 @@ fine_tune_model(model, tokenizer)
 ```
 
 **Exercise 4.1**: How does fine-tuning work? What's happening under the hood when we fine-tune our model?
-
+Fine-tuning adjusts the weights of the model based on new learning from the new data.
 ## Part 5: Building a Chatbot
 
 Now that we have our fine-tuned model, let's use it to build a chatbot:
@@ -101,8 +103,8 @@ iface.launch()
 ```
 
 **Exercise 5.1**: How does the performance of the chatbot change after fine-tuning?
-
-## Part 6: Conclusion and Further Reading
+Perfomance of the finetuned model for the input such as "hello", "how are you?", and "I'm good thank you" increased because we finetuned the model on this data when we put in "Hello" it predicts that the next words will be "How are you?", When we put in "Hello, how are you" it predict the response to be "I'm good, thank you".
+## Part 6: Conclusion and Further Reading.
 
 You've built a chatbot using Hugging Face and Gradio and learned about fine-tuning a model!
 
@@ -112,5 +114,5 @@ Here are some additional resources:
 - [Practical Guide to Fine-Tuning Transformers](https://towardsdatascience.com/fine-tuning-transformers-723e6c2ea7ea)
 
 **Exercise 6.1**: What are some potential issues with the way we fine-tuned our model? 
-
+We are using multiplication to generate a set of training data which is exactly the same there is no diversity in the data or combinations of different ways of greetings that causes the model to overfit.
 **Final Project**: Fine-tune a chatbot on a more complex dataset, such as the [Persona-Chat dataset](https://github.com/facebookresearch/ParlAI/tree/master/parlai/tasks/personachat). Try out different models from the Hugging Face model hub. Evaluate the chatbot's performance before and after fine-tuning and discuss the findings.
