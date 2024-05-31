@@ -143,6 +143,7 @@ history = model.fit(dataset, epochs=10, callbacks=[checkpoint_callback])
 ```
 
 **Exercise 6.1**: What is the purpose of the checkpoint directory? 
+A checkpoint dictionary serves the purpose of saving the model's state during training at specific intervals or conditions. This dictionary typically contains various components of the model's state, including model parameters, optimizer state, and training progress metrics.
 
 ## Part 7: Generating Text with the Model
 
