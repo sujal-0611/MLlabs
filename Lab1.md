@@ -74,11 +74,16 @@ print('Test accuracy:', test_acc)
 ```
 *Task*: Now, try building your own model. Try adding more layers, changing the number of units in the layers, or changing the activation function. See how these changes affect the accuracy of the model.
 ---
-I tried adding addtional input layers of relu activation function, first of 256 units and then 128 units turns out adding additional layer of 256 units increased accuracy but adding one extra layer of 128 reduced accuracy and increased loss. 
+I added more layers and, changed no of units in layers and  used various activation function as well as here's my observations.
+while working for original 2 layers
+-  I used these following units of layers : 512 ,256, 128,64
+  -  And i observed that with decreasing the no. of units in the layers both the loss and test accuracy is decreasing slightly.
+-  I changed activation function from 'relu' to 'sigmoid' and found out that
+  - there's a significant change in both loss and accuracy for worse.
 
-Increasing units in the first layer improved accuracy slightly (0.9809 vs 0.9793) while maintaining similar loss (0.0587 vs 0.0690). This suggests the extra capacity helped learn richer representations.
+While working with one more layer i.e 3 layers in total
+-  with 'sigmoid' as third layer we observed that both loss and test accuracy are significantly worse that working in 2 layers
+-  with 'relu' as third layer we observed that loss becomes 'nan' i.e "Not A Number" and accuracy goes from around 0.67 aprrox to 0.0624.
 
-Used other types of activation functions such as tanh, sigmoid, and linear. All of these activation function performed badly compared to relu. Linear and sigmoid perfomed very badly by increased loss and decreased accuracy.
-
-Learnt about the relu, tanh, sigmoid, linear and  softmax activation functions and their uses in I/O and hidden layers, and experimentation with layers tells us using more layers than required can cause overfitting and lower the prfomance. Number of neurons in layers also play a important role in learning quality of the model.
-
+:- In Short we can say with increasing layers we see more loss and lesser test frequency while with increase in no units in the layers loss are less and test accuracy improves. 
+ 
