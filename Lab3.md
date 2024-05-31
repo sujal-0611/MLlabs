@@ -76,6 +76,7 @@ sequences = char_dataset.batch(seq_length+1, drop_remainder=True)
 
 **Exercise 4.1**: What is the purpose of the `char2idx` and `idx2char` dictionaries?
  I think char2idx creates a dictionary of integer indices, idx2char is creating a numpy array which indices chars of the text. char2idx dictionary enables converting sequences of characters into sequences of integer indices, which can be fed into the model and idx2char array allows for converting predicted sequences of indices back into readable text during the model's output phase.
+ 
 **Exercise 4.2**: Why do we divide the data into input and target?
 
 We are dividing data into input and target because we need the model to learn the differences between predicted values and target values
@@ -114,6 +115,13 @@ model = build_model(
 ```
 
 **Exercise 5.1**: What does each layer in this model do? 
+- Embedding Layer: Converts categorical input data into dense vector representations, capturing semantic similarities between tokens.
+  
+- LSTM Layer: Processes sequential data, capturing both short-term and long-term dependencies through memory cells and gating mechanisms.
+  
+- Dense Layer: Maps the output of the LSTM layer to the desired output space, enabling the model to make predictions or perform classification/regression tasks.
+  
+Together, these layers form the core components of an RNN model, allowing it to effectively learn from and process sequential data for a wide range of applications in natural language processing, time series analysis, and more.
 
 ## Part 6: Training the Model
 
