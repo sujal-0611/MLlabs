@@ -37,6 +37,7 @@ from tensorflow.keras.layers import Embedding, LSTM, Dense
 from tensorflow.keras.losses import SparseCategoricalCrossentropy
 from tensorflow.keras.optimizers import Adam
 import numpy as np
+import os # Import the os module to use os.path.join
 ```
 
 **Exercise 3.1**: What are each of these libraries and functions used for? 
