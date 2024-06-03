@@ -73,6 +73,7 @@ model.add(layers.Dense(10, activation='softmax')) #Output layer
 
 1. How is the structure of LeNet-5 different from our basic CNN, and why might these differences be beneficial?
 2. Why do we use 'tanh' activation instead of 'relu' in LeNet-5?
+   When LeNet-5 was proposed, ReLU was not widely known or used.Researchers were still exploring various activation functions. Also ReLu lacks symmetry and can suffer from the “dying ReLU” problem (where neurons get stuck with zero gradients).
 
 ## Part 3: AlexNet
 
@@ -102,7 +103,12 @@ model.add(layers.Dense(1000, activation='softmax'))
 **Questions:**
 
 1. How does the depth of AlexNet (number of layers) compare to previous networks we've built? What are the advantages and disadvantages of having a deeper network?
-2. What's the purpose of using padding in the convolutional layers?
+  - alexnet - 5 convolo layers , 2-fully connected closed layer , 1- fully connected open(output) layer. Deeper networks offer advantages like automatic feature learning and improved performance, they come with computational costs and require careful handling to avoid overfitting.
+    
+3. What's the purpose of using padding in the convolutional layers?
+  - In convolutional neural networks (CNNs), padding refers to adding extra pixels (usually zeros) around the input image or feature map before applying convolution.
+    Padding increases the spatial dimensions of the feature map.
+
 
 ## Part 4: VGGNet
 
@@ -114,6 +120,7 @@ VGGNet, the runner-up in ILSVRC 2014, is known for its simplicity and depth. VGG
 
 1. How does VGGNet ensure that it has a much deeper architecture than previous models without increasing the complexity of model design?
 2. What are the trade-offs between model complexity (depth, number of parameters etc.) and computational efficiency?
+
 
 ## Part 5: ResNet
 
