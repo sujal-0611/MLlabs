@@ -45,7 +45,10 @@ history = model.fit(train_images, train_labels, epochs=10,
 **Questions**:
 
 1. What role do the Convolutional layers, ReLU, and MaxPooling layers play in a CNN?
+   -convolutional layers detect features, ReLU introduces nonlinearity, and pooling layers downsample feature maps while maintaining important information.
+   
 2. What effect does the order of layers in a CNN have on its performance and why?
+   -the order of layers affects how features are learned, spatial information is preserved, and nonlinearity is introduced. Proper layer ordering, along with hyperparameter tuning, plays a crucial role in achieving optimal CNN performance. 
 
 ## Part 2: LeNet-5
 
